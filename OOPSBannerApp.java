@@ -1,46 +1,17 @@
 public class OOPSBannerApp {
-
     public static void main(String[] args) {
 
-        String line1 = String.join("   ",
-                " ***** ",
-                " ***** ",
-                " ***** ",
-                " ***** "
-        );
+        String[] oops = {
+            " OOO    OOO   PPPP    SSSS  ",
+            "O   O  O   O  P   P  S      ",
+            "O   O  O   O  PPPP    SSS   ",
+            "O   O  O   O  P          S  ",
+            " OOO    OOO   P      SSSS   "
+        };
 
-        String line2 = String.join("   ",
-                " *   * ",
-                " *   * ",
-                " *   * ",
-                " *     "
-        );
-
-        String line3 = String.join("   ",
-                " *   * ",
-                " *   * ",
-                " ***** ",
-                "  *****"
-        );
-
-        String line4 = String.join("   ",
-                " *   * ",
-                " *   * ",
-                " *     ",
-                "      *"
-        );
-
-        String line5 = String.join("   ",
-                " ***** ",
-                " ***** ",
-                " *     ",
-                " ***** "
-        );
-
-        System.out.println(line1);
-        System.out.println(line2);
-        System.out.println(line3);
-        System.out.println(line4);
-        System.out.println(line5);
+        // Using loop to print the banner
+        for (int i = 0; i < oops.length; i++) {
+            System.out.println(oops[i]);
+        }
     }
 }
