@@ -1,26 +1,14 @@
+import java.util.HashMap;
+import java.util.Map;
+
 class OOPSBannerApp {
-
-    // Static Inner Class to store character and pattern
-    static class CharacterPatternMap {
-        char character;
-        String[] pattern;
-
-        // Constructor
-        CharacterPatternMap(char character, String[] pattern) {
-            this.character = character;
-            this.pattern = pattern;
-        }
-
-        // Getter method
-        String[] getPattern() {
-            return pattern;
-        }
-    }
 
     public static void main(String[] args) {
 
-        // Creating objects for each character
-        CharacterPatternMap O = new CharacterPatternMap('O', new String[]{
+        // HashMap to store character patterns
+        Map<Character, String[]> patternMap = new HashMap<>();
+
+        patternMap.put('O', new String[]{
                 " *** ",
                 "*   *",
                 "*   *",
@@ -30,7 +18,7 @@ class OOPSBannerApp {
                 " *** "
         });
 
-        CharacterPatternMap P = new CharacterPatternMap('P', new String[]{
+        patternMap.put('P', new String[]{
                 "**** ",
                 "*   *",
                 "*   *",
@@ -40,7 +28,7 @@ class OOPSBannerApp {
                 "*    "
         });
 
-        CharacterPatternMap S = new CharacterPatternMap('S', new String[]{
+        patternMap.put('S', new String[]{
                 " ****",
                 "*    ",
                 "*    ",
@@ -50,15 +38,18 @@ class OOPSBannerApp {
                 "**** "
         });
 
-        // Word to display
-        CharacterPatternMap[] word = {O, O, P, S};
+        // Word to print
+        String word = "OOPS";
 
         // Print banner
         for (int i = 0; i < 7; i++) {
             StringBuilder line = new StringBuilder();
-            for (CharacterPatternMap cp : word) {
-                line.append(cp.getPattern()[i]).append("  ");
+
+            for (char c : word.toCharArray()) {
+                String[] pattern = patternMap.get(c);
+                line.append(pattern[i]).append("  ");
             }
+
             System.out.println(line);
         }
     }
